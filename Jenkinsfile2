@@ -11,7 +11,7 @@ pipeline {
         echo 'Checkout the source code from GitHub'
         git branch: 'main', url: 'https://github.com/mmiitthhuuzz/insureme_project.git'            
 }
-
+}
     stage('Package the Application') {
       steps {
         echo " Packaing the Application"
@@ -23,5 +23,6 @@ pipeline {
       steps {
      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Insureme_Project/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
    }
+}
 }
 }
