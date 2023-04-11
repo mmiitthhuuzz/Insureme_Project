@@ -44,6 +44,9 @@ pipeline {
         sh 'docker push mmidlaj/insureme_project:latest'
             }
     }  
-
+   
+   stage('Deploy Application using Ansible') {
+      steps {
+   ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'deploy.yml' 
 }
 }
