@@ -5,6 +5,10 @@
   tasks:
   - name: update
     command: sudo apt update
+  
+  - name: Configure dpkg package
+    become: yes
+    shell: sudo dpkg --configure -a
 
   - name: Install python and pip
     command: sudo apt install -y python-pip
