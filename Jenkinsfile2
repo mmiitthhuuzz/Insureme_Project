@@ -53,7 +53,7 @@ pipeline {
    
    stage('Run') {
             steps {
-                sh 'java -jar insureme-runnable.jar'
+                sh 'java -jar Insureme-runnable.jar'
             }
         }
     }
