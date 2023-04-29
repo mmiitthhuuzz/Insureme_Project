@@ -51,11 +51,10 @@ pipeline {
 }
 }
    
-   stage('Selenium Test') {
-      steps {
-        chmod -R +x *
-        sh 'java -jar insureme-runnable.jar'
-      }
-    } 
-}
+   stage('Run') {
+            steps {
+                sh 'java -jar insureme-runnable.jar'
+            }
+        }
+    }
 }
