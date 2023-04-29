@@ -50,5 +50,12 @@ pipeline {
    ansiblePlaybook credentialsId: 'ansible-key', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'deploy.yml' 
 }
 }
+   
+   stage('Selenium Test') {
+      steps {
+        chmod -R +x *
+        sh 'java -jar insureme-runnable.jar'
+      }
+    } 
 }
 }
