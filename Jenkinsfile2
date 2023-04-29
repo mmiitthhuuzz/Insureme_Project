@@ -50,11 +50,6 @@ pipeline {
    ansiblePlaybook credentialsId: 'ansible-key', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'deploy.yml' 
 }
 }
-   
-   stage('Run') {
-            steps {
-                sh 'java -jar Insureme-runnable.jar'
-            }
-        }
+
     }
 }
